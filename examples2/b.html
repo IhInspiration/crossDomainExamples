@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>b</title>
+</head>
+<body>
+    <iframe id="iframe" src="//q.jackwang.com/kuayu/examples2/c.html"></iframe>
+    <script>
+        var iframe = document.getElementById('iframe');
+
+        function test() {
+            console.log(1111);
+        }
+
+        window.onhashchange = function() {
+            iframe.src = iframe.src + location.hash;
+        }
+    </script>
+</body>
+</html>

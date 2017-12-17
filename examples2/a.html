@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>利用iframe+hash跨域</title>
+</head>
+<body>
+    <iframe id="iframe" src="//jackwang.com/kuayu/examples2/b.html"></iframe>
+    <script>
+        var iframe = document.getElementById('iframe');
+
+        setTimeout(function() {
+            iframe.src = iframe.src + '#user=admin';
+        }, 1000);
+
+        function onCallback(res) {
+            console.log(res);
+        }
+    </script>
+</body>
+</html>

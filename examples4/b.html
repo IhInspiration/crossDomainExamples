@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>b</title>
+</head>
+<body>
+    <script>
+        window.addEventListener('message', function(e) {
+            console.log('data from q.jackwang.com: ' + e.data);
+            var data = JSON.parse(e.data);
+
+            if(data) {
+                data.number = 16;
+
+                window.parent.postMessage(JSON.stringify(data), 'http://q.jackwang.com');
+            }
+        }, false);
+    </script>
+</body>
+</html>
