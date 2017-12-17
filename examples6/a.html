@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nodejs中间件代理跨域</title>
+</head>
+<body>
+    <script>
+        var xhr = new XMLHttpRequest();
+
+        xhr.withCredentials = true;
+
+        xhr.open('post', 'http://q.jackwang.com:3000/login?user=admin', true);
+
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState === 4 && xhr.status === 200) {
+                console.log(xhr.responseText);
+            }
+        };
+
+        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+        xhr.send('crossTest=222');
+    </script>
+</body>
+</html>
